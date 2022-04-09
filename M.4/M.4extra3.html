@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Aquesta línia de codi:<br>
+        let numRandom = Math.floor(Math.random() * (4 - 1)) + 1<br>
+     
+     Retorna un nombre aleatori entre min inclòs (1) i màx exclòs (4).<br>
+     https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random<br>
+     
+     Escriu un programa que et permet jugar pedra, paper o tisora ​​amb l'ordinador.<br>
+     
+     Per a això l'ordinador haurà de generar un nombre aleatori entre 1 i 3 que representi pedra, paper o tisora ​​respectivament, i l'usuari haurà de respondre al seu torn amb un un nombre entre l'1 i el 3 després de mostrar la següent pantalla:<br>
+     
+     Juguem a pedra, paper o tisora:<br>
+     
+     1. Pedra<br>
+     
+     2. Paper<br>
+     
+     3. Tisora<br>
+     
+     Tria (1-3):<br>
+     
+     
+     Si l'usuari indica algun nombre diferent del sol·licitat, haurà d'aparèixer el següent missatge:<br>
+     «Entenc que no vols jugar. Adéu»<br>
+     En cas contrari, indicar el guanyador de la següent manera:<br>
+     
+     Jo xxx i tu xxx. He guanyat! o Has guanyat!<br>
+     
+     segons sigui el cas.<br>
+     
+     Exemple:<br>
+     
+     «Jo paper i tu tisora. Has guanyat!»<br>
+     
+     
+     **El paper guanya la pedra perquè l’embolica; les tisores guanyen el paper perquè el tallen, i la pedra guanya les tisores perquè les espatllen.
+    </p><hr>
+
+    <p>Quina opció tries? <select id="joc"  width="12">
+        <option value ="1" > Pedra</option>
+        <option value ="2"> Paper</option>
+        <option value ="3"> Tisora</option>       
+    </select></p>
+
+    <button onclick = "exercici4extra3()"> Pedra, Paper o Tisora </button>
+    <br></br>
+
+    <h1 id="resultat"></h1>
+
+   <script>
+
+        let randomNum = Math.floor(Math.random() * (4 - 1)) + 1
+        
+       function exercici4extra3() {             
+            let opcioPersonal = Number(document.getElementById("joc").value)
+            console.log(opcioPersonal);
+
+            let nomPersona;
+            let nomPC;
+            let empat;
+            let winPC;
+            let winPersona;
+
+            if (opcioPersonal === 1) {
+                nomPersona="pedra"
+            } else if (opcioPersonal === 2) { 
+                nomPersona = "paper"
+            } else if (opcioPersonal === 3) {
+                nomPersona = "tisora"
+            }
+            
+            if (randomNum === 1) {
+                nomPC="pedra"
+            } else if (randomNum === 2) { 
+                nomPC = "paper"
+            } else if (randomNum === 3){
+                nomPC = "tisora"
+            }
+            
+            empat = (randomNum === 1 && opcioPersonal === 1) || (randomNum === 2 && opcioPersonal === 2) || (randomNum === 3 && opcioPersonal === 3);
+            winPC = (randomNum === 1 && opcioPersonal === 3) || (randomNum === 2 && opcioPersonal === 1) || ( randomNum === 3 && opcioPersonal === 2);
+            winPersona = (opcioPersonal === 1 && randomNum === 3) || (opcioPersonal === 2 && randomNum === 1) || ( opcioPersonal === 3 && randomNum === 2);
+
+            if (empat) {
+                document.getElementById("resultat").innerHTML = `Jo ${nomPersona} i tu ${nomPC}, empat`
+            } else if (winPC) {
+                document.getElementById("resultat").innerHTML = `Jo ${nomPersona} i tu ${nomPC}, has perdut ( ha guanyat el PC)`
+            } else if (winPersona) {
+                document.getElementById("resultat").innerHTML = `Jo ${nomPersona} i tu ${nomPC}, he guanyat (ha oerdut el PC)`
+            }       
+        }    
+
+    </script> 
+
+</body>
+</html>
+
+

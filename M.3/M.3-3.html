@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1> El programa demana a l'usuari que introdueixi 3 notes i el programa mostra la mitjana de les 3 notes per pantalla. </h1>
+    <hr>
+    <br>
+        
+    <input type="number" id="CAIXA1" placeholder="Write a number"/>
+    <input type="number" id="CAIXA2" placeholder="Write a number"/>
+    <input type="number" id="CAIXA3" placeholder="Write a number"/>
+    <button onclick = "exercici3()"> Click here! </button>
+    <br></br>
+
+    <p id="mitjana">El resultat de la mitjana és: “valor”</p>
+
+    <script>
+
+        function exercici3() {
+
+            let number1 = Number(document.getElementById("CAIXA1").value);
+            let number2 = Number(document.getElementById("CAIXA2").value);
+            let number3 = Number(document.getElementById("CAIXA3").value);
+
+            let mitjana = (number1 + number2 + number3)/ 3            
+
+            document.getElementById("mitjana").innerHTML = `El resultat de la mitjana és: ${mitjana}`;
+
+        }  
+
+    </script>
+
+</body>
+</html>

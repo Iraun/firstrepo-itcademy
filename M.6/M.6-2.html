@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Aquest programa calcula l'edat mitjana d'un número de persones introduït per teclat.<br>
+
+        S'ha de crear una funció que s'encarregui de demanar les edats a l'usuari i de calcular l'edat mitjana.<br><br>
+        
+        La funció rebrà per paràmetre el nº de persones a qui ha de demanar l'edat.<br>
+        L'edat de les persones només serà vàlida si està compresa entre 0 i 120 anys.<br>
+        La mitjana de les edats introduïdes s'ha de retornar per la funció (return).
+    </p><hr>
+
+    <input type="number" id="numpersones" placeholder=" Numero de persones"/>
+    
+    <button onclick = "veureMitjana()"> Clica! </button>
+    <br></br>
+
+    <p id="resultat"></p>
+
+    <script>
+
+        function mitjana(sumaEdats, numPersones){
+            return sumaEdats / numPersones
+        }        
+
+        function veureMitjana(){
+
+            let numPersones = Number(document.getElementById("numpersones").value);                     
+            let sumaEdats = 0                      
+
+            for (i = 0; i<numPersones; i++) {                 
+                let edats = Number(prompt( `Escriu l'edat ${i +1}`))
+                let limitEdat = (edats>0 && edats<120)
+                if (!limitEdat) {
+                    alert ("L'edat introduida ha de ser entre 0 i 120 anys")
+                    edats = Number(prompt( `Torna a escriure l'edat`))
+                    sumaEdats += edats
+                } else if ( limitEdat ) {
+                    sumaEdats += edats
+                    console.log(edats);
+                }
+                
+            }
+
+            document.getElementById("resultat").innerHTML = ` El resultat de les edats mitjanes és ${mitjana(sumaEdats, numPersones)}`
+        }
+
+    </script>
+
+</body>
+</html>

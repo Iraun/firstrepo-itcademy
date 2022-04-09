@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Fer un programa que demani dos números i un operador(+,-,*,/).<br>
+
+        Al final, el programa ha d'imprimir per pantalla el resultat de fer l’operació que contingui la variable operador.
+    </p><hr>
+
+    
+    <p> Introdueix el primer nunmero: <input type="number" id="CAIXA1" placeholder="Escriu el numero"/></p>
+    <p> Introdueix el segon numero:   <input type="number" id="CAIXA2" placeholder="Escriu el numero"/></p>    
+        
+    <p>Quina operació vols realitzar? <select id="operacio"  width="12">
+        <option value="1"> + </option>
+        <option value="2"> - </option>
+        <option value="3"> * </option>
+        <option value="4"> / </option>       
+    </select></p>
+
+    <button onclick = "exercici4_5()"> Clica aquí! </button>
+
+    <h1 id="mitjana"></h1>
+
+    <script>
+
+        function exercici4_5() {
+
+            let primerNum = Number(document.getElementById("CAIXA1").value);
+            let segonNum = Number(document.getElementById("CAIXA2").value);
+            let operacio = document.getElementById("operacio").value;
+
+            let sollucio
+
+            switch (operacio) {
+                case "1":      
+                  sollucio = `La solució és ${primerNum + segonNum}`;
+                break;
+                case "2":
+                  sollucio = `La solució és ${primerNum - segonNum}`;
+                break;
+                case "3":               
+                  sollucio = `La solució és ${primerNum * segonNum}`;
+                break;
+                case "4":               
+                  sollucio = `La solució és ${primerNum / segonNum}`;
+                break;    
+            }
+
+            document.getElementById("mitjana").innerHTML = sollucio
+
+        }
+
+    </script>
+
+</body>
+</html>

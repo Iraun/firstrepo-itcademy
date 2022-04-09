@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div id="subtitle">
+            <h2>Enunciat:</h2>
+        </div>
+        <div id="question">
+            <p>Dona’t un array de números, el programa ha de mostrar la suma de tots els números parells i la suma de tots els números imparells.</p>
+        </div>
+        <div id="solution">
+            <h2>Solució:</h2>
+        </div>
+    </section>
+    <form>
+        <p>Introdeix un llista de numeros (separats per espais):</p>
+        <input type="text" id="userArray" placeholder="Escriu aqui...">
+        <button type="button" onclick="sumNumbers()">Enviar</button>
+        <p id="resultEven"></p>
+        <p id="resultOdd"></p>
+    </form>
+
+    <script>
+        const printResultEven= document.getElementById("resultEven");
+        const printResultOdd= document.getElementById("resultOdd");
+
+        function sumNumbers() {
+            let userArray= document.getElementById("userArray").value;
+            let arrayNums= userArray.split(" ");
+            
+            let evenNums= 0
+            let oddNums= 0
+
+            for(i=0; i < arrayNums.length; i++) {
+
+                if(i % 2 === 0) {
+                    evenNums += Number(arrayNums[i]);
+                }printResultEven.innerHTML= `La suma dels nombres parells d'aquesta llista és: ${evenNums}`;
+
+                if(i % 2 === 1) {
+                    oddNums += Number(arrayNums[i]);
+                }printResultOdd.innerHTML= `La suma dels nombre imparells d'aquesta llista és: ${oddNums}`;
+            }
+        }
+    </script>
+</body>
+</html>

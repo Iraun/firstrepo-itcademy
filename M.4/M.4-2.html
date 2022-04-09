@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Aquest programa li demana l’edat a l’usuari, en funció d’aquesta, mostrarem un dels següents missatges per pantalla:<br>
+
+        Si té 5 anys o menys: preescolar<br>
+        
+        Si té entre 6 i 11 anys: primària<br>
+        
+        Si té entre 12 i 15: ESO<br>
+        
+        Si té entre 16 i 17: Batxillerat<br>
+        
+        Si és major d'edat: FP o Universitat </p><hr><br>
+
+    <p> Quants anys tens? <input type="number" id="CAIXA" placeholder="Escriu l'edat"/>
+    <button onclick = "exercici4_2()"> Clica aquí! </button></p>
+    <br>
+
+    <p id="mitjana"></p>
+
+
+    <script>            
+
+        function exercici4_2() { 
+            
+            let anys = Number(document.getElementById("CAIXA").value)
+
+            if (anys < 0) {
+                alert( "L'edat a de ser més gran de 0")
+            } else if (anys > 0 && anys <= 5 ) {
+                document.getElementById("mitjana").innerHTML = "Preescolar"
+            } else if (anys >= 6 && anys <= 11 ) {
+                document.getElementById("mitjana").innerHTML = "Primària"
+            } else if (anys >= 12 && anys <= 15 ) {
+                document.getElementById("mitjana").innerHTML = "ESO"
+            } else if (anys >= 16 && anys <= 17 ) {
+                document.getElementById("mitjana").innerHTML = "Batxillerat"
+            } else if ( anys >= 18 ) {
+                document.getElementById("mitjana").innerHTML = "FP o Universitat" 
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Demana a l'usuari un número entre 0 i 99 i mostra'l escrit en lletres (pots fer-ho en català o castellà).<br>
+
+        Exemple: 56 (cinquanta-sis) o 56 (cincuenta y seis)
+    </p>
+
+    <input type="number" id="CAIXA1" placeholder="Escriu el numero (0-99)"/>
+    <button onclick = "exercici4extra2()"> Clica aquí! </button>
+    <br>
+
+    <p id="resultat"></p>
+
+    <script>
+        function exercici4extra2(){ 
+            let num = Number(document.getElementById("CAIXA1").value)
+
+            let desena = parseInt( num / 10);
+            console.log(desena);
+            let unitat = num - (desena * 10);
+            console.log(unitat);
+            let unitatEscrit = "";
+            console.log(unitatEscrit);
+
+            switch(unitat) {
+                case 1: unitatEscrit += "u"; break;
+                case 2: unitatEscrit += "dos"; break;
+                case 3: unitatEscrit += "tres"; break;
+                case 4: unitatEscrit += "quatre"; break;
+                case 5: unitatEscrit += "cinc"; break;
+                case 6: unitatEscrit += "sis"; break;
+                case 7: unitatEscrit += "set"; break;
+                case 8: unitatEscrit += "vuit"; break;
+                case 9: unitatEscrit += "nou"; break;
+            }
+
+            if (num === 1){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 2){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 3){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 4){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 5){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 6){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 7){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 8){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 9){ document.getElementById("resultat").innerHTML = ` ${unitatEscrit} `}
+            if (num === 10){ document.getElementById("resultat").innerHTML = ` deu `}
+
+            if (num === 11){ document.getElementById("resultat").innerHTML = ` onze `}
+            if (num === 12){ document.getElementById("resultat").innerHTML = ` dotze `}
+            if (num === 13){ document.getElementById("resultat").innerHTML = ` tretze `}
+            if (num === 14){ document.getElementById("resultat").innerHTML = ` catorze `}
+            if (num === 15){ document.getElementById("resultat").innerHTML = ` quinze `}
+            if (num === 16){ document.getElementById("resultat").innerHTML = ` setze `}
+            if (num === 17){ document.getElementById("resultat").innerHTML = ` diset `}
+            if (num === 18){ document.getElementById("resultat").innerHTML = ` divuit `}
+            if (num === 19){ document.getElementById("resultat").innerHTML = ` dinou `}
+
+            if (num === 20){ document.getElementById("resultat").innerHTML = ` vint `}
+            if (num === 30){ document.getElementById("resultat").innerHTML = ` trenta `}
+            if (num === 40){ document.getElementById("resultat").innerHTML = ` quaranta `}
+            if (num === 50){ document.getElementById("resultat").innerHTML = ` cinquanta `}
+            if (num === 60){ document.getElementById("resultat").innerHTML = ` seixanta `}
+            if (num === 70){ document.getElementById("resultat").innerHTML = ` setanta `}
+            if (num === 80){ document.getElementById("resultat").innerHTML = ` vuitanta `}
+            if (num === 90){ document.getElementById("resultat").innerHTML = ` noranta `}
+            
+            if (desena === 2 && num != 20){ document.getElementById("resultat").innerHTML = ` vint-i-${unitatEscrit} `}
+            if (desena === 3 && num != 30){ document.getElementById("resultat").innerHTML = ` trenta-${unitatEscrit} `}
+            if (desena === 4 && num != 40){ document.getElementById("resultat").innerHTML = ` quaranta-${unitatEscrit} `}
+            if (desena === 5 && num != 50){ document.getElementById("resultat").innerHTML = ` cinquanta-${unitatEscrit} `}
+            if (desena === 6 && num != 60){ document.getElementById("resultat").innerHTML = ` seixanta-${unitatEscrit} `}
+            if (desena === 7 && num != 70){ document.getElementById("resultat").innerHTML = ` setanta-${unitatEscrit} `}
+            if (desena === 8 && num != 80){ document.getElementById("resultat").innerHTML = ` vuitanta-${unitatEscrit} `}
+            if (desena === 9 && num != 90){ document.getElementById("resultat").innerHTML = ` noranta-${unitatEscrit} `}            
+
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Realitzar un programa que tingui un menú on se li mostraran 4 opcions a l’usuari per pantalla:<br>
+
+        1.- Quadrat<br>
+        
+        2.- Triangle<br>
+        
+        3.- Rectangle<br>
+        
+        4.- Cercle<br>
+        
+        Segons l’opció escollida haurà d’introduir unes dades o altres perquè el programa mostri per pantalla l’àrea (el valor) del polígon escollit.
+    </p><hr>
+
+
+    <p>Quina operació vols fer? <select id="operacio"  width="12">
+        <option value="q"> Quadrat</option>
+        <option value="t"> Triangle</option>
+        <option value="r"> Rectangle</option>
+        <option value="c"> Cercle</option>
+    </select></p>
+
+    <button onclick = "veureResultat()"> Veure el resultat! </button>
+    <br></br>
+    
+    <p id="resultat"></p>
+
+
+
+
+
+    <script>
+
+        function areaQuadrat(costatQuadrat) {
+            const resultatArea = costatQuadrat * costatQuadrat
+            return resultatArea
+        }
+
+        function areaTriangle(baseTriangle, alçadaTriangle) {
+            const resultatArea = (baseTriangle * alçadaTriangle) / 2
+            return resultatArea
+        }
+        function areaRectangle(costatRectangle1, costatRectangle2) {
+            const resultatArea = costatRectangle1 * costatRectangle2
+            return resultatArea
+        }
+        function areaCercle(radiCercle) {
+            const resultatArea = (radiCercle * radiCercle) * 3.1415
+            return resultatArea
+        }
+
+        function veureResultat() {
+
+            let operacio = document.getElementById("operacio").value;
+
+            if ( operacio == "q") {
+                let costatQuadrat = Number(prompt("Introdueix un costat del quadrat"));
+                document.getElementById("resultat").innerHTML = ("L'àrea del qudrat és de " + areaQuadrat(costatQuadrat) + " cm");
+            } else if ( operacio == "t") {
+                let baseTriangle = Number(prompt("Introdueix la base del triangle"));
+                let alçadaTriangle = Number(prompt("Introdueix l'alçada del triangle"));
+                document.getElementById("resultat").innerHTML = ("L'àrea del triangle és de " + areaTriangle(baseTriangle, alçadaTriangle) + " cm");
+            } else if ( operacio == "r") {
+                let costatRectangle1 = Number(prompt("Introdueix un costat del rectangle"));
+                let costatRectangle2 = Number(prompt("Introdueix un costat del rectangle"));
+                document.getElementById("resultat").innerHTML = ("L'àrea del rectangle és de " + areaRectangle(costatRectangle1, costatRectangle2) + " cm");
+            } else if ( operacio == "c") {
+                let radiCercle = Number(prompt("Introdueix el radi del cercle"));
+                document.getElementById("resultat").innerHTML = ("L'àrea del cercle és de " + areaCercle(radiCercle) + " cm");
+            }
+        }
+
+        /*function showTriangleArea() {
+            const userTriangleBase = document.getElementById('userTriangleBase').value
+            const userTriangleHeight = document.getElementById('userTriangleHeight').value
+            const showResultAreaTriangle = document.getElementById('showResultAreaTriangle')
+
+            const triangleAreaResult = (userTriangleBase * userTriangleHeight) / 2
+
+            showResultAreaTriangle.innerText = `The area of the triangle is: ${triangleAreaResult}cm²`
+
+            triangleBorderStylingWithCss(showResultAreaTriangle)
+        }
+
+        function showRectangleArea() {
+            const userRectangleSideA = document.getElementById('userRectangleSideA').value
+            const userRectangleSideB = document.getElementById('userRectangleSideB').value
+            const showResultAreaRectangle = document.getElementById('showResultAreaRectangle')
+
+            const rectangleAreaResult = userRectangleSideA * userRectangleSideB
+
+            showResultAreaRectangle.innerText = `The area of the rectangle is: ${rectangleAreaResult}cm²`
+
+            rectangleBorderStylingWithCss(showResultAreaRectangle)
+        }
+
+        function showCircleArea() {
+            const userCircleRadius = document.getElementById('userCircleRadius').value
+            const showResultAreaCircle = document.getElementById('showResultAreaCircle')
+
+            const circleAreaResult = userCircleRadius * userCircleRadius * 3.1416
+
+            showResultAreaCircle.innerText = `The area of the circle is: ${parseInt(circleAreaResult)}cm²`
+            circleBorderStylingWithCss(showResultAreaCircle)
+        }*/
+
+
+        
+
+
+    </script>
+</body>
+</html>

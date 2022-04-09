@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Taula de multiplicar. L’usuari introduirà un número (del 1 al 10) per pantalla, i utilitzant un bucle, el programa li mostrarà la taula de multiplicar d’aquell número.<br>
+
+        Exemple:<br>
+        
+        2 x 1 = 2<br>
+        
+        2 x 2 = 4<br>
+        
+        2 x 3 = 6<br>
+        
+        ...<br>
+        
+        2 x 10 = 20
+    </p><hr>
+
+    <p>Quina taula de multiplicar vols calcular? <input type="number" id="CAIXA" placeholder="Escriu el numero"/></p>
+    <button onclick = "exercici716()"> Clica aquí! </button>
+    <br></br>
+
+    <p id="resultat"></p>
+
+    <script>
+
+        function exercici716() { 
+            let num = Number(document.getElementById("CAIXA").value)
+
+            let valida = (num >= 1 && num <= 10) ? true : false;
+
+            if (valida) { 
+                let taulaMultipplicar = "";                
+
+                for (i = 1; i<=10; i++) {
+                    taulaMultipplicar += ` ${num} x ${i} = ${num * i}  <br> `                              
+                }
+                document.getElementById("resultat").innerHTML = ` ${taulaMultipplicar} `
+            } else{
+                alert("Has d'introduir un numero entre l'1 i el 10")
+            }
+        }  
+
+    </script>
+</body>
+</html>

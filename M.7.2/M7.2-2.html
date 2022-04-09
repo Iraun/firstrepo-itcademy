@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Fes un programa que mostri el següent per pantalla:<br>
+
+        * * * * * *<br>
+        
+        * * * * *<br>
+        
+        * * * *<br>
+        
+        * * *<br>
+        
+        * *<br>
+        
+        *<br>
+        
+        El nombre de línies formades per “*” vindrà donat per un número que l’usuari introduirà per teclat.<br>
+        
+        Condició: En tot el codi del programa només hi pot haver un *<br>
+        
+        També, a poder ser, no utilitzis cap mètode com repeat() o substring() de la classe String
+    </p>
+
+    <p> Quina mida vols? <input type="number" id="CAIXA1" placeholder="Escriu el numero "/></p>
+    
+
+    <button onclick = "exercici722()"> Aviam </button>
+
+    <h1 id="resultat"></h1>
+
+    <script>
+
+        function exercici722() {
+
+            let mida = Number(document.getElementById("CAIXA1").value);
+
+            let alçada = ""            
+
+            for (i = 0; i < mida; i++) {             
+                for (j=0; j<mida - i; j++){ 
+                    alçada += "*"
+                }
+                alçada += `<br>`
+            }
+            document.getElementById("resultat").innerHTML =  alçada 
+        }
+
+    </script>
+</body>
+</html>

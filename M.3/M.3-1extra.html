@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Escriu un programa JavaScript que llegeix un nombre i mostra per pantalla el doble i el triple d'aquest número.</h1>
+    <hr>
+    <br>
+
+    <p> Introdueix un numero: <input type="number" id="num" placeholder="Write a number"/>
+    <button onclick = "exercici3_1extra()"> Click here! </button></p>
+    <br>
+
+    <p id="doble1">El doble del numero introduït és: </p>
+    <p>El triple del numero introduït és: <span id="triple1"></span></p>
+
+    <script>
+
+        function exercici3_1extra() {
+
+            let number1 = Number(document.getElementById("num").value);
+
+            let doble = number1 * 2
+            let triple = number1 * 3
+
+            document.getElementById("doble1").innerHTML = `El doble del numero introduït és ${doble} `
+            document.getElementById("triple1").innerHTML =  triple
+
+        }
+
+    </script>
+
+
+</body>
+</html>

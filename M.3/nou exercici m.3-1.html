@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Fer un programa que li demani a l’usuari mitjançant el prompt: El nom, el cognom i l’edat de l’usuari. Un cop l’usuari hagi acabat d’introduir les dades,
+         aquestes s’han de mostrar per consola, amb un popup i mitjançant getElementById().</p>
+    <p><button onclick = "exercici1()"> Click here! </button> </p>
+    <p id="NOM"> Aquí hi haurà el NOM </p>
+    <p id="COGNOM"> Aquí hi haurà el COGNOM </p>
+    <p id="EDAT"> Aquí hi haurà el EDAT </p>
+
+<script> 
+
+    function exercici1() { 
+
+        let nom = prompt ( "Com et dius?", " Escriu el teu nom");
+        let cognom = prompt ( "Quin és el teu cognom?", " Escriu el teu cognom");
+        let edat = prompt ( "Quants anys tens?", " Escriu la teva edat");
+
+        console.log (`El nom introduit és ${nom}`);
+        console.log (`El cognom introduit és ${cognom}`);
+        console.log (`L'edat intruida és ${edat}`);
+        console.log( "Nom:", nom, "Cognom:", cognom, "Edat:", edat)
+
+        alert(`El teu nom és ${nom} \nEl teu cognom és ${cognom} \nLa teva edat és ${edat} ` )
+    /* alert(`El teu cognom és ${cognom}`)
+        alert(`La teva edat és ${edat}`) */
+
+
+        document.getElementById("NOM").textContent = `El teu nom és ${nom}`;
+        document.getElementById("COGNOM").textContent = `El teu cognom és ${cognom}`;
+        document.getElementById("EDAT").textContent = `La teva edat és ${edat}`;
+
+    }
+
+
+</script>
+</body>
+</html>

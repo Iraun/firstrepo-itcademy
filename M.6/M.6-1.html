@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Calculadora arcaica. El programa demana a l’usuari que introdueixi dos números i l’operació que desitja realitzar.<br> 
+
+        Cada operació (suma, resta, multiplicació, divisió i mòdul) estarà programada en una funció diferent.
+    </p>
+    <hr>
+
+    <input type="number" id="CAIXA1" placeholder="Escriu un numero"/>
+    <input type="number" id="CAIXA2" placeholder="Escriu un numero"/>
+
+    <p>Quina operació vols fer? <select id="operacio"  width="12">
+        <option value="s"> Suma</option>
+        <option value="r"> Resta</option>
+        <option value="d"> Divisió</option>
+        <option value="m"> Multiplicació</option>
+
+    </select></p>
+
+    <button onclick = "veureResultat()"> Veure el resultat! </button>
+    <br></br>
+
+    <p id="resultat"></p>
+
+    <script>
+
+        function suma(num1, num2) {
+            return num1 + num2
+        }
+
+        function resta(num1, num2) {
+            return num1 - num2
+        }
+
+        function divisio(num1, num2) {
+            return num1 / num2
+        }
+
+        function multiplicacio(num1, num2) {
+            return num1 * num2
+        }
+
+        function veureResultat() {
+
+            let primerNum = Number(document.getElementById("CAIXA1").value);
+            let segonNum = Number(document.getElementById("CAIXA2").value);
+
+            let operacio = document.getElementById("operacio").value;
+
+            if ( operacio == "s") {
+                document.getElementById("resultat").innerHTML = ('El resultat de ' + primerNum + ' + ' + segonNum + ' és ' + suma(primerNum, segonNum));
+            } else if ( operacio == "r") {
+                document.getElementById("resultat").innerHTML = ('El resultat de ' + primerNum + ' - ' + segonNum + ' és ' + resta(primerNum, segonNum));
+            } else if ( operacio == "d") {
+                document.getElementById("resultat").innerHTML = ('El resultat de ' + primerNum + ' / ' + segonNum + ' és ' + divisio(primerNum, segonNum));
+            } else if ( operacio == "m") {
+                document.getElementById("resultat").innerHTML = ('El resultat de ' + primerNum + ' * ' + segonNum + ' és ' + multiplicacio(primerNum, segonNum));
+            }
+        }
+
+    </script>
+
+</body>
+</html>

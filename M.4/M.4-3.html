@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>
+        Una escola d’idiomes concedeix beques a futurs estudiants si compleixen una sèrie de requisits.<br>
+
+        A l'alumne se li assigna una beca si és major d’edat i si té un títol universitari. O també se li assigna una beca si l’alumne està a l’atur.<br> 
+        
+        El programa demana les tres dades per pantalla i en finalitzar mostra si l’alumne té la beca o no.
+        
+    </p><hr><br>
+
+    <p>Tens un títol universitari? <select id="universitat" size="2"  width="12">
+        <option value="s"> SI</option>
+        <option value="n"> NO</option>
+    </select></p>
+
+    <p>Ets major d'edat? <select id="anys"  width="12">
+        <option value="s"> SI</option>
+        <option value="n"> NO</option>
+    </select></p>
+
+    <p>Ets a l'atur? <select id="atur"  width="12">
+        <option value="s"> SI</option>
+        <option value="n"> NO</option>
+    </select></p>
+        
+    <button onclick = "exercici4_3()"> Clica aquí! </button>
+    <br></br>
+
+    <h1 id="mitjana"></h1>
+
+    <script>
+
+        function exercici4_3() {
+
+            let positionUni = document.getElementById("universitat").selectedIndex; //és fa per saber quin has marcat. En aquest cas també hem posat "size=2" pq es vegi
+            let uni = document.getElementById("universitat").options[positionUni].value;
+            
+            let anys = document.getElementById("anys").value;
+            let atur = document.getElementById("atur").value;
+
+            if ( uni == "s" && anys == "s" ) {
+                document.getElementById("mitjana").innerHTML = "Felicitats, tens dret a Beca"
+            } else if ( atur == "s") {
+                document.getElementById("mitjana").innerHTML = "Felicitats, tens dret a Beca"
+            } else {
+                document.getElementById("mitjana").innerHTML = "No tens dret a Beca"
+            } 
+
+        }        
+
+    </script>
+    
+</body>
+</html>

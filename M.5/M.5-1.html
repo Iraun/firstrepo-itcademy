@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Fer un programa amb una caixa de text i un botó.<br>
+       L’usuari introdueix el nombre de paraules que vol introduir en el camp de text,<br>
+       al fer clic en el botó apareixen tants “prompts” com el nombre de paraules que ha dit l’usuari que volia introduir.<br> 
+
+        Les paraules es guarden en un array i un cop han sigut totes introduïdes, es mostren per pantalla.
+    </p><hr>
+
+    <p> Quantes paraules vols introduïr? <input type="number" id="CAIXA1" placeholder="Escriu el numero "/></p>
+
+    <button onclick = "exercici5_1()"> Veure Paraules </button>
+
+    <h1 id="resultat"></h1>
+
+    <script>
+
+        function exercici5_1() { 
+            let numParaules = Number(document.getElementById("CAIXA1").value);
+            //console.log(numParaules);
+
+            
+            let frase = [];
+            //console.log(frase)
+            let fraseFinal = ""
+
+            for (let i = 1; i<=numParaules; i++){
+                let paraules = prompt(` Escriu la paraula ${i} de ${numParaules} `);
+                frase.push(paraules);
+                //console.log(i)
+            }
+
+            for( let words of frase) {
+                fraseFinal += `${words} <br>`
+            }
+
+            document.getElementById("resultat").innerHTML = fraseFinal
+
+        }
+
+    </script>
+
+</body>
+</html>

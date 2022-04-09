@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Fer un programa on l’usuari introdueix per pantalla un caràcter i un número. El programa imprimeix per pantalla un quadrat amb la mida i el caràcter introduïts per l’usuari.<br>
+
+        Exemple:<br>
+        
+        % % % % %<br>
+        
+        % % % % %<br>
+        
+        % % % % %<br>
+        
+        % % % % %<br>
+        
+        % % % % %
+    </p><hr>
+
+
+    <p> Quina mida vols? <input type="number" id="CAIXA1" placeholder="Escriu el numero "/></p>
+    <p> Quin caràcter vols? <input type="text" id="CAIXA2" placeholder="Escriu el caràcter "/></p>
+
+    <button onclick = "exercici7_1_7()"> Aviam </button>
+
+    <h1 id="resultat"></h1>
+
+
+    <script>
+
+        function exercici7_1_7() {
+
+            let mida = Number(document.getElementById("CAIXA1").value);
+            let caracter = document.getElementById("CAIXA2").value;
+
+            let alçada = ""
+            
+
+            for (i = 1; i <= mida; i++) { 
+               //alçada += caracter -> NO
+                for (j=1; j<=mida; j++){ 
+                    alçada += `${caracter} `
+                }
+                alçada += `<br>`
+            }
+            document.getElementById("resultat").innerHTML =  alçada 
+        }
+
+
+
+
+    </script>
+</body>
+</html>

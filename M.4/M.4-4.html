@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>L’usuari introdueix un mes per pantalla i mitjançant un switch amb els 12 mesos de l’any, el programa calcula els dies del mes i mostra el següent:<br> 
+
+        Exemple: Si el número introduït és 1, llavors ha d'aparèixer per pantalla: “El mes de gener té 31 dies”
+    </p><hr>
+    <p>Quants dies té aquest mes? <select id="mes"  width="12">
+        <option value="Gener"> Gener</option>
+        <option value="Febrer"> Febrer</option>
+        <option value="Març"> Març</option>
+        <option value="Abril"> Abril</option>
+        <option value="Maig"> Maig</option>
+        <option value="Juny"> Juny</option>
+        <option value="Juliol"> Juliol</option>
+        <option value="Agost"> Agost</option>
+        <option value="Setembre"> Setembre</option>
+        <option value="Octubre"> Octubre</option>
+        <option value="Novembre"> Novembre</option>
+        <option value="Desembre"> Desembre</option>
+    </select></p>
+
+    <button onclick = "exercici4_4()"> Saber dies </button>
+    <br></br>
+
+    <h1 id="mitjana"></h1>
+
+
+
+    <script>
+
+        function exercici4_4() { 
+
+            let mes = document.getElementById("mes").value
+            let dies = ""
+
+            switch (mes) {
+                case "Gener":                  
+                case "Març":
+                case "Maig":               
+                case "Juliol":                 
+                case "Agost":                  
+                case "Octubre":                 
+                case "Desembre":
+                  dies =  31;
+                break;
+                case "Febrer":
+                  dies = 28;
+                break;
+                case "Abril":                 
+                case "Juny":                 
+                case "Setembre":                  
+                case "Novembre":
+                  dies =  30;
+                break;  
+            }
+
+            document.getElementById("mitjana").innerHTML = ` El mes de/d' ${mes} té ${dies} dies`
+            
+        }
+
+
+
+
+    </script>
+</body>
+</html>

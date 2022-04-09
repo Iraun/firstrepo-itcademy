@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>El programa demana dos números enters i llavors calcula la suma dels valors compresos entre els dos números, inclosos.<br>
+
+        Exemple: 4 i 6  --> resultat = 4 + 5 + 6 = 15
+    </p><hr>
+
+    <p> Digues el primer numero <input type="number" id="CAIXA1" placeholder="Escriu el numero "/></p>
+    <p> Digues el segon numero <input type="number" id="CAIXA2" placeholder="Escriu el numero "/></p>
+
+    <button onclick = "exercici5_2()"> Veure Paraules </button>
+
+    <h1 id="resultat"></h1>
+
+
+    <script>
+
+        function exercici5_2() {
+            let primerNum = Number(document.getElementById("CAIXA1").value);
+            let secondNum = Number(document.getElementById("CAIXA2").value);
+            //let i, numSuma, suma;
+            //let resultat
+
+            let valida =(primerNum<1 || primerNum >10) || (secondNum<1 || secondNum>10) ? false : true;
+                if (!valida) {
+                    alert (" el numero ha de ser de l'1 al 10")
+                } else {
+                    let min = (primerNum < secondNum) ? primerNum : secondNum
+                    let max = (primerNum > secondNum) ? primerNum : secondNum
+                    
+                    let operacio = [min]
+                    //console.log(operacio)
+                    let resultat = min                      
+
+                    for (i=min+1; i<= max; i++ ) {
+                        //console.log(i);
+                        operacio.push(i)
+                        resultat += +i
+                        console.log(resultat);
+                            
+                    }
+
+                    
+                    //document.getElementById("resultat").innerHTML = `${numSuma} = ${suma}`
+                    document.getElementById("resultat").innerHTML = ` Resultat = ${operacio.join(" + ")} = ${resultat}`
+                }
+
+        }
+
+        /*
+
+                    suma = min;
+                    numSuma = min
+                    
+
+                    for ( i = min +1; i <=max; i++){
+                        //console.log(i)
+                        numSuma += " + " +i;
+                        //console.log(numSuma)
+                        suma += i;
+                        //console.log(suma)
+                    }
+
+
+            */
+
+
+            
+
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>L’usuari introdueix un any a per teclat
+        i el programa crida a un mètode que indiqui l’any és de traspàs o no.
+    </p><hr>
+
+    <p> Quin any vols saber? <input type="number" id="CAIXA" placeholder="Escriu el numero "/></p>
+    <button onclick = "comprovar()"> Aviam </button>
+
+    <h1 id="resultat"></h1>
+
+    <script>
+
+        function tipuAny(a) {
+            let comprovarAny;
+
+            if (a % 400 == 0) { 
+                comprovarAny = " és de trapàs"
+            } else if ((a % 4 === 0) && (a % 100 != 0)) { 
+                comprovarAny = " és de trapàs"
+            } else { 
+                comprovarAny = " No és de trapàs"
+            }
+
+            return comprovarAny;
+        }
+
+        function comprovar() {
+            let a = Number(document.getElementById("CAIXA").value);
+            let indicarAny = tipuAny(a);
+            document.getElementById("resultat").innerHTML = "L'any " + a + indicarAny
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

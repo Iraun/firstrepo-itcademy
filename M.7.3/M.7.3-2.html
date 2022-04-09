@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>En aquest programa l’usuari ha d’introduir un string i, utilitzant un bucle for, el programa ha de mostrar l’string al revés</p>
+    <hr>
+
+    <input type="text" id="CAIXA1" placeholder="Escriu un numero"/>
+    <button onclick = "stringReverse()"> Veure el resultat! </button>
+
+    <p id="resultat"></p>
+
+    <script>
+        //const printResultOnDisplay = document.getElementById("resultat")
+
+        function stringReverse() {
+            let resultat = ''
+            
+            const string = document.getElementById("CAIXA1").value
+
+            for (i = string.length - 1; i >= 0; i--) {
+                resultat += string.charAt(i)
+            }
+
+            document.getElementById("resultat").innerText = `L'string al revés és: ${resultat}`
+        }
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Escriu un programa JavaScript que calculi els litres de pintura necessaris per a pintar una paret rectangular.</p>
+    <p>Un litre de pintura cobreix aproximadament, 12m2 en una sola mà.</p>       
+    <p>Crea una constant anomenada coberturaLitre per a guardar la dada de cobertura de la pintura (12m2)</p>
+    <p>Hauràs de demanar a l'usuari:</p>
+        
+        - L'alt i ample de la paret ( multiplicant sabràs l'àrea de la mateixa )<br>
+        - El nombre de mans a aplicar 
+        <p>Mostra en pantalla els litres de pintura a utilitzar.</p><hr>
+
+    <p>Introdueix l'alçada de la paret: <input type="number" id="num1" placeholder="Write a number"/></p>
+    <p>Introdueix l'amplada de la paret: <input type="number" id="num2" placeholder="Write a number"/></p>
+    <p>Introdueix les capes de pintura: <input type="number" id="capes" placeholder="Write a number"/></p>
+    <button onclick = "exercici3_1extra()"> Submit </button>
+    <br>
+
+    <p>Els litres de pintura necessaris són : <span id="pintura"></span></p>
+
+    <script>
+
+        function exercici3_1extra() {     
+            let numero1 = Number(document.getElementById("num1").value);
+            let numero2 = Number(document.getElementById("num2").value);
+            let capes = Number(document.getElementById("capes").value);
+
+            let coberturaLitre = (numero1 * numero2) / 12
+            let litresPintura = coberturaLitre * capes
+                        
+            document.getElementById("pintura").innerHTML = litresPintura;
+            console.log(litresPintura);
+        }
+        
+
+    </script>
+
+
+</body>
+</html>

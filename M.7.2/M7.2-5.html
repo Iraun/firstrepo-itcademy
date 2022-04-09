@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>L’usuari introdueix un nombre per teclat i el programa crida a un mètode que indiqui si el número és primer o no.</p><hr>
+
+    <p> Escriu un numero? <input type="number" id="CAIXA1" placeholder="Escriu el numero "/></p>    
+
+    <button onclick = "exercici725()"> Aviam </button>
+
+    <h1 id="resultat"></h1>
+
+    <script>
+        function exercici725() {
+            let num = Number(document.getElementById("CAIXA1").value);
+            let esPrimer = true;
+            
+            if ( num === 1){
+                document.getElementById("resultat").innerHTML = `El ${num} és un numero primer `
+            } else{
+
+                for (i = 2; i<num; i++){
+                    if (num % i === 0){
+                        esPrimer = false
+                    } 
+                }
+            }
+
+            if (!esPrimer){
+                document.getElementById("resultat").innerHTML = `El ${num} no és un numero primer `
+            } else {
+                document.getElementById("resultat").innerHTML = `El ${num} és un numero primer `
+            }
+        }
+
+    </script>
+</body>
+</html>

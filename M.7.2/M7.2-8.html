@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>L’usuari introdueix un nombre per teclat i el programa crida a un mètode que ha de mostrar la successió de Fibonacci.
+
+        Exemple:
+        
+        Si l’usuari introdueix el 10 el resultat ha de ser:
+        
+        0,1,1,2,3,5,8,13,21,34
+    </p><hr>
+
+    <p> Quin any vols saber? <input type="number" id="CAIXA" /></p>
+    <button onclick = "fibonacci(Number(document.getElementById('CAIXA').value))"> Aviam </button>
+
+    <h1 id="resultat"></h1>
+
+    <script>
+
+        function fibonacci(numero) {
+            let dadaOk = Number.isInteger(numero) && numero > 0 ? true : false
+            let resultat = document.getElementById("resultat");
+
+            if (dadaOk) {
+                let primerValor = 0, segonValor = 1, canviValor;
+                for (let i=0; i<numero; i++) {
+                    if( i == 0) {
+                        resultat.innerHTML = `${primerValor}`
+                    } else if (i == 1) {
+                        resultat.innerHTML += `,${segonValor}`
+                    } else {
+                        resultat.innerHTML += `,${primerValor + segonValor}`
+                        canviValor = primerValor
+                        primerValor = segonValor
+                        segonValor = canviValor + segonValor;
+                    }
+                }
+            } else {
+                resultat.innerHTML += "El numero introduit no és correcte, introdueix un numero positiu enter"
+            }
+
+
+
+            
+
+            
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

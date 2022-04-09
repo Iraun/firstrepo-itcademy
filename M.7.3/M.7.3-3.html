@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>L’usuari ha d’introduir una frase i el programa ha de dir si la frase és un palíndrom</p><hr>
+
+    <input type="text" id="CAIXA1" placeholder="Escriu un numero"/>
+    <button onclick = "stringReverse()"> Veure el resultat! </button>
+
+    <p id="resultat"></p>
+
+    <script>
+
+        function stringReverse() {
+            let resultat = ''
+            
+            const string = document.getElementById("CAIXA1").value
+
+            for (i = string.length - 1; i >= 0; i--) {
+                resultat += string.charAt(i)
+            }
+
+            if (string === resultat) {
+                document.getElementById("resultat").innerText = `La paraula ${string} és un palíndrom `
+            } else {
+                document.getElementById("resultat").innerText = `La paraula ${string} no és un palíndrom `
+            }
+
+             
+        }
+
+
+        /*function reves(cadena){
+            let lletra, i;
+            let cadenaReves ="";
+
+            for (i=0; i<=cadena.length; i++) {
+               lletra=cadena.charAt(cadena.length-i);
+               cadenaReves += lletra;
+            }
+
+            return cadenaReves;
+         }
+         */
+    </script>
+</body>
+</html>

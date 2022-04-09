@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Fer un programa que demani a l’usuari quin dia i quin mes va néixer, amb aquesta informació el programa mostra per pantalla, de quin signe del zodíac és.<br><br>
+
+        Àries-Aries (21.03 — 19.04)<br>
+        Taure-Tauro (20.04 — 20.05)<br>
+        Bessons-Géminis (21.05 — 20.06)<br>
+        Cranc-Cáncer (21.06 — 22.07)<br>
+        LLeó-Leo (23.07 — 22.08)<br>
+        Verge-Virgo (23.08 — 22.09)<br>
+        Balança-Libra (23.09 — 22.10)<br>
+        Escorpi-Escorpio (23.10 — 21.11)<br>
+        Sagitario-Sagitario (22.11 — 21.12)<br>
+        Capricorn-Capricornio (22.12 — 19.01)<br>
+        Aquari-Acuario (20.01 — 18.02)<br>
+        Peixos-Piscis (19.02 — 20.03)
+    </p><hr>
+
+    <p> Quin dia vas neixer? <input type="number" id="CAIXA1" placeholder="Escriu el dia"/></p>
+
+    <p>Quin mes vas néixer? <select id="mes"  width="12">
+        <option value="Gener"> Gener</option>
+        <option value="Febrer"> Febrer</option>
+        <option value="Març"> Març</option>
+        <option value="Abril"> Abril</option>
+        <option value="Maig"> Maig</option>
+        <option value="Juny"> Juny</option>
+        <option value="Juliol"> Juliol</option>
+        <option value="Agost"> Agost</option>
+        <option value="Setembre"> Setembre</option>
+        <option value="Octubre"> Octubre</option>
+        <option value="Novembre"> Novembre</option>
+        <option value="Desembre"> Desembre</option>
+    </select></p>
+
+    <button onclick = "exercici4_6()"> Clica aquí! </button>
+
+    <h1 id="mitjana"></h1>
+
+
+
+    <script>
+
+        function exercici4_6() {
+
+            let dayOfBirth = Number(document.getElementById("CAIXA1").value)
+            let monthOfBirth = document.getElementById("mes").value
+
+
+            let zodiacSign = "";
+
+            switch (monthOfBirth) {
+                case "Gener": 
+
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=19 ) {
+                        zodiacSign = " Ets capricorn! ";
+                    } else if ( dayOfBirth >= 20 && dayOfBirth <= 31 ) {
+                        zodiacSign = " Ets aquari! ";
+                    }
+                  
+                break;
+
+                case "Febrer": 
+                    
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=18 ) {
+                        zodiacSign = " Ets aquari! ";
+                    } else if ( dayOfBirth >= 19 && dayOfBirth <= 29 ) {
+                        zodiacSign = " Ets peixos! ";
+                    }
+
+                break;
+
+                case "Març": 
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=20 ) {
+                        zodiacSign = " Ets peixos! ";
+                    } else if ( dayOfBirth >= 21 && dayOfBirth <= 31 ) {
+                        zodiacSign = " Ets àries! ";
+                    }
+
+                break;
+
+                case "Abril":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=19 ) {
+                        zodiacSign = " Ets àries! ";
+                    } else if ( dayOfBirth >= 20 && dayOfBirth <= 30 ) {
+                        zodiacSign = " Ets taure! ";
+                    }
+
+                break;
+
+                case "Maig":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=20 ) {
+                        zodiacSign = " Ets taure! ";
+                    } else if ( dayOfBirth >= 21 && dayOfBirth <= 31 ) {
+                        zodiacSign = " Ets bessons! ";
+                    }
+
+                break;
+
+                case "Juny":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=20 ) {
+                        zodiacSign = " Ets bessons! ";
+                    } else if ( dayOfBirth >= 21 && dayOfBirth <= 30 ) {
+                        zodiacSign = " Ets cranc! ";
+                    }
+
+                break;
+
+                case "Juliol":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=22 ) {
+                        zodiacSign = " Ets cranc! ";
+                    } else if ( dayOfBirth >= 23 && dayOfBirth <= 31 ) {
+                        zodiacSign = " Ets lleó! ";
+                    }
+
+                break;
+
+                case "Agost":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=22 ) {
+                        zodiacSign = " Ets lleó! ";
+                    } else if ( dayOfBirth >= 23 && dayOfBirth <= 31 ) {
+                        zodiacSign = " Ets verge! ";
+                    }
+
+                break;
+
+                case "Setembre":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=22 ) {
+                        zodiacSign = " Ets verge! ";
+                    } else if ( dayOfBirth >= 23 && dayOfBirth <= 30 ) {
+                        zodiacSign = " Ets balança! ";
+                    }
+
+                break;
+
+                case "Octubre":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=22 ) {
+                        zodiacSign = " Ets balnça! ";
+                    } else if ( dayOfBirth >= 23 && dayOfBirth <= 31 ) {
+                        zodiacSign = " Ets escorpi! ";
+                    }
+
+                break;
+
+                case "Novembre":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=21 ) {
+                        zodiacSign = " Ets escorpi! ";
+                    } else if ( dayOfBirth >= 22 && dayOfBirth <= 30 ) {
+                        zodiacSign = " Ets sagitari! ";
+                    }
+
+                break;
+
+                case "Desembre":
+                
+                    if ( dayOfBirth >= 1 &&  dayOfBirth <=21 ) {
+                        zodiacSign = " Ets sagitari! ";
+                    } else if ( dayOfBirth >= 22 && dayOfBirth <= 31 ) {
+                        zodiacSign = " Ets capricorn! ";
+                    }
+
+                break;
+                            
+            }
+
+            document.getElementById("mitjana").innerHTML = `${zodiacSign}`
+
+        }
+
+    </script>
+
+</body>
+</html>

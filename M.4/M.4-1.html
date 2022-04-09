@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>
+        Modifica l’exercici 1 del mòdul 3. Un cop introduïdes les dades, el programa ha de mostrar el següent per pantalla:<br>
+
+        - Si l’usuari té 18 anys o més: “Nom Cognom, ets MAJOR d’edat”<br> 
+        
+        - Si l’usuari és menor de 18 anys: “Nom Cognom, ets MENOR d’edat”.
+    </p><hr>
+
+    <input type="text" id="CAIXA1" placeholder="Escriu el nom"/>
+    <input type="text" id="CAIXA2" placeholder="Escriu el cognom"/>
+    <input type="number" id="CAIXA3" placeholder="Escriu l'edat"/>
+    <button onclick = "exercici3()"> Clica aquí! </button>
+    <br></br>
+
+    <p id="mitjana"></p>
+
+    <script>
+
+        function exercici3() {
+
+            let name = document.getElementById("CAIXA1").value;
+            console.log(name);
+            let surname = document.getElementById("CAIXA2").value;
+            let age = Number(document.getElementById("CAIXA3").value);
+
+            if ( age >= 18 ){
+
+                document.getElementById("mitjana").innerHTML = `${name} ${surname}, ets MAJOR d'edat`;
+
+            } else if ( age >= 0 && age < 18 ) {
+
+                document.getElementById("mitjana").innerHTML = `${name} ${surname}, ets MENOR d'edat`;
+
+            } else if ( age < 0 ) {
+                
+               alert( "El numero introduït és inferior a zero" )
+
+            }     
+            
+        } 
+
+    </script>
+
+</body>
+</html>

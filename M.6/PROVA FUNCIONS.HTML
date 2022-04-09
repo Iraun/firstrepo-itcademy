@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="parrafo1"> Soy el parrafo 1</p>
+    <p id="parrafo2"> Soy el parrafo 2</p>
+    <p id="parrafo3"> Soy el parrafo 3</p>
+    <p id="parrafo4"> Soy el parrafo 4</p>
+    <p id="parrafo5"> Soy el parrafo 5</p>
+
+    <p>
+    <input id="btn1" type="button" onclick='MostrarInnerHTML("parrafo1")' value="Ver InnerHTML parrafo1" />
+    <input id="btn2" type="button" onclick='MostrarInnerHTML("parrafo2")' value="Ver InnerHTML parrafo2" />
+    <input id="btn3" type="button" onclick='MostrarInnerHTML("parrafo3")' value="Ver InnerHTML parrafo3" />
+    <input id="btn4" type="button" onclick='MostrarInnerHTML("parrafo4")' value="Ver InnerHTML parrafo4" />
+    <input id="btn5" type="button" onclick='MostrarInnerHTML("parrafo5")' value="Ver InnerHTML parrafo5" />        
+    </p>
+
+    <p>Que parrafo quieres cambiar? (1-5) <input id="numparrafo" type="number" /></p>
+    <p>Que valor quieres escribir?  <input id="valorparrafo" type="text" /></p>
+    <p> <input id="btn20" type="button" onclick='llamarCambiarParrafo()' value="Cambiar parrafo" /></p>
+    <p id="mostrarMes" > Aquí ira el mes</p>
+    <p><input type="button" onclick='mesHoy()' value="Mes actual" /></p>
+    <p><input type="button" onclick='llamarSumar()' value="Sumar 2 numeros" /></p>
+
+
+    <script>
+
+        function MostrarInnerHTML(silla){
+            alert(document.getElementById(silla).innerHTML)
+        }
+
+        /*function cambiarParrafo(parrafo, valor){
+            document.getElementById(parrafo).innerHTML=valor;
+        }*/
+
+        function llamarCambiarParrafo(){
+            let numeroParrafo = "parrafo" + document.getElementById("numparrafo").value 
+            let contenido = document.getElementById("valorparrafo").value 
+
+            document.getElementById(numeroParrafo).innerHTML = contenido // això substitueix la resta que està comentat
+            //cambiarParrafo (numeroParrafo, contenido);
+        }
+
+        function mesActual() {
+
+            let meses = ["Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Setembre","Octubre","Novembre","Desembre" ];
+
+            let fecha = new Date(); //Imaginaros 08Feb2022
+            let mesFecha = fecha.getMonth(); // 1 (Comienza a contar en 0)
+            let mesLetra = meses[mesFecha]; //Gener = 0, Febrer = 1...
+            //mes sera igual a febrer
+
+            return mesLetra
+        }
+
+        function mesHoy() {
+            document.getElementById("mostrarMes").innerHTML = "Estamos en" + mesActual();
+        }
+
+        function suma(numero1, numero2) {
+            return numero1 + numero2;
+        }
+
+        function llamarSumar() {
+            let primerNumero = Number(prompt('Numero1?', ''));
+            let segundoNumero = Number(prompt('Numero2?', ''));
+
+            alert ('El resultado de' + primerNumero + '+' + segundoNumero + 'es' + suma(primerNumero, segundoNumero));
+        }
+
+    </script>
+</body>
+</html>

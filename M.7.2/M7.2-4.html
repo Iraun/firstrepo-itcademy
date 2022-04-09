@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Realitzar un programa on l’usuari introdueix un número i el programa crida a un mètode que retorna el factorial del número introduit.
+
+        El factorial d'un nombre n (enter, no negatiu) és el producte de tots els nombres enters positius inferiors o iguals a n. 
+    </p>
+
+    <input type="number" id="CAIXA1" placeholder="Escriu un numero"/>
+    <button onclick = "veureResultat()"> Veure el resultat! </button>
+    <br></br>
+
+    <p id="resultat"></p>
+
+    <script>
+
+        function veureResultat() {
+            let num = Number(parseInt(document.getElementById("CAIXA1").value));            
+            let resultat = num
+
+            for (i=1; i<num; i++) {
+                resultat *=  i                  
+                console.log(resultat);
+            }     
+            document.getElementById("resultat").innerHTML = resultat
+        }
+    </script>
+</body>
+</html>

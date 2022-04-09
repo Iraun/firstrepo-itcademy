@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Has de modificar el programa anterior per afegir una nova funcionalitat: establir un número màxim de 5 intents.<br>
+
+        Si l’usuari encerta el número escollit pel programa abans d'aquests 5 intents, el programa mostra el següent missatge per pantalla: “Enhorabona, el número és X i has necessitat Y intents per encertar-lo”.<br>
+        
+        Si no encerta el número abans de 5 intents, el programa mostra per pentalla: "Has utilitzat massa intents! El número és X ".
+    </p><hr>
+
+    <button onclick = "exercici5_3()"> Aviam </button>
+
+    <h1 id="resultat"></h1>
+
+    <script>
+        
+        function exercici5_3() {
+            let randomNum = Math.ceil((Math.random() * 10));
+            console.log(randomNum);   
+            let num = 0    
+            let intents = 0
+            console.log(intents);
+            do {
+
+                num = Number(prompt ( "Escriu el numero que creus que tocarà"));
+                if (num<0 || num>10){
+                    alert("El numero introduït no pot ser més petit de 0 ni més gran de 10")
+                }
+                intents++
+                if (intents===5 && num !=randomNum){
+                    alert("Has superat el numero d'intents")
+                }
+
+            } while (num != randomNum && intents<5);
+
+            if ( intents<=5 && num === randomNum){ 
+
+                alert("Molt bé, el numero era el " + num + " i has necessitat " + intents + " intents")
+            }
+        }
+
+
+    </script>
+</body>
+</html>
